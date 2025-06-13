@@ -2,6 +2,7 @@
   "name": "my-react-app",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://shubhamm1720.github.io/Solar-Power-Estimator",
   "dependencies": {
     "@testing-library/dom": "^10.4.0",
     "@testing-library/jest-dom": "^6.6.3",
@@ -24,7 +25,7 @@
   ,"predeploy": "npm run build",
   "deploy": "gh-pages -d build"
   },
-  "homepage": "https://shubhamm1720.github.io/Solar-Power-Estimator",
+  
 
   "eslintConfig": {
     "extends": [

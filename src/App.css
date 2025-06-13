@@ -1,38 +1,350 @@
-.App {
+/* ========== Global Reset & Fonts ========== */
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #f0f4f8, #d9e2ec);
+  color: #1a202c;
+  line-height: 1.6;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f0f4f8;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #ff9900;
+  border-radius: 10px;
+  border: 2px solid #f0f4f8;
+}
+
+/* ========== Container ========== */
+.landing,
+.estimator,
+.result-container {
+  max-width: 900px;
+  margin: 2rem auto 4rem auto;
+  padding: 2rem 3rem 3rem 3rem;
+  background: #ffffffdd;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(255, 153, 0, 0.2);
+  transition: box-shadow 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Hover effect on container */
+.landing:hover,
+.estimator:hover,
+.result-container:hover {
+  box-shadow: 0 15px 35px rgba(255, 153, 0, 0.4);
+}
+
+/* ========== Buttons ========== */
+button {
+  background: #ff9900;
+  color: white;
+  font-weight: 700;
+  padding: 0.85rem 2.25rem;
+  font-size: 1.15rem;
+  border: none;
+  border-radius: 40px;
+  cursor: pointer;
+  box-shadow: 0 5px 15px rgba(255, 153, 0, 0.4);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  margin-top: 1.5rem;
+  display: inline-block;
+}
+
+button:hover,
+button:focus {
+  background-color: #cc7a00;
+  box-shadow: 0 7px 20px rgba(204, 122, 0, 0.6);
+  outline: none;
+}
+
+button:active {
+  transform: scale(0.97);
+}
+
+/* ========== Headings ========== */
+
+h1,
+h2,
+h3 {
+  color: #ff9900;
+  font-weight: 800;
+  margin-bottom: 1rem;
+  text-align: center;
+  letter-spacing: 1.2px;
+  text-shadow: 0 2px 6px rgba(255, 153, 0, 0.3);
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin-top: 0.2rem;
+}
+
+h2 {
+  font-size: 2.25rem;
+  margin-top: 0.75rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+  margin: 2rem 0 1rem 0;
+}
+
+/* ========== Paragraphs ========== */
+
+p {
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+  text-align: center;
+  color: #444444dd;
+}
+
+/* ========== Inputs & Selects ========== */
+
+input[type="number"],
+select {
+  font-size: 1.1rem;
+  padding: 0.65rem 1rem;
+  margin-top: 1rem;
+  margin-bottom: 1.5rem;
+  border-radius: 12px;
+  border: 2px solid #ff9900;
+  outline: none;
+  width: 100%;
+  max-width: 400px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input[type="number"]:focus,
+select:focus {
+  border-color: #cc7a00;
+  box-shadow: 0 0 6px #cc7a00aa;
+}
+
+/* ========== Weather Simulator Box ========== */
+
+.weather-box {
+  max-width: 400px;
+  margin: 0 auto 2rem auto;
+  padding: 1rem 1.5rem;
+  background: #ff99002b;
+  border: 2px solid #ff9900;
+  border-radius: 20px;
+  text-align: center;
+  font-weight: 600;
+  color: #cc7a00;
+  letter-spacing: 0.7px;
+  user-select: none;
+}
+
+/* ========== Image in Result Page ========== */
+
+.result-container img {
+  display: block;
+  max-width: 280px;
+  height: auto;
+  margin: 0 auto 1.5rem auto;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(255, 153, 0, 0.25);
+  transition: transform 0.4s ease;
+  cursor: pointer;
+}
+
+.result-container img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 15px 35px rgba(255, 153, 0, 0.4);
+}
+
+/* ========== Result Page Text Styling ========== */
+
+.result-container p {
+  font-weight: 600;
+  font-size: 1.15rem;
+  margin: 0.8rem 0;
+  color: #333333cc;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* Financial Section */
+.result-container h3 {
+  margin-top: 3rem;
+  color: #cc7a00;
+  text-align: center;
+  font-weight: 700;
+  letter-spacing: 1.5px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* ========== Result Graph Container ========== */
+
+.graph-container {
+  margin-top: 3rem;
+  padding: 1rem;
+  border: 2px solid #ff9900;
+  border-radius: 20px;
+  background: #fff8f1;
+  box-shadow: inset 0 0 10px #ff990022;
+  max-width: 100%;
+  overflow-x: auto;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* ========== Landing Page Specific Styles ========== */
+
+.landing {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  min-height: 80vh;
+  padding: 3rem 1rem;
+  text-align: center;
 }
 
-.App-link {
-  color: #61dafb;
+.landing p {
+  max-width: 600px;
+  margin-bottom: 2rem;
+  font-size: 1.3rem;
+  color: #555555cc;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+/* ========== Estimator Page Styles ========== */
+
+.estimator {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.estimator select,
+.estimator input {
+  max-width: 350px;
+}
+
+.estimator button {
+  margin-top: 2rem;
+}
+
+/* ========== Animations & Transitions for GSAP ========== */
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  will-change: opacity, transform;
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.fade-in.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Page transitions - wrapper for fade effect */
+.page-wrapper {
+  opacity: 1;
+  transition: opacity 0.6s ease-in-out;
+}
+
+.page-wrapper.exit {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* ========== Responsive Media Queries ========== */
+
+@media screen and (max-width: 768px) {
+  .landing,
+  .estimator,
+  .result-container {
+    margin: 1rem 1rem 3rem 1rem;
+    padding: 1.5rem 1.5rem 2rem 1.5rem;
   }
-  to {
-    transform: rotate(360deg);
+
+  h1 {
+    font-size: 2.25rem;
   }
+
+  h2 {
+    font-size: 1.75rem;
+  }
+
+  h3 {
+    font-size: 1.3rem;
+  }
+
+  .result-container img {
+    max-width: 200px;
+  }
+}
+
+button:focus,
+input:focus,
+select:focus {
+  outline: 3px solid #ff9900;
+  outline-offset: 2px;
+}
+
+a {
+  color: #ff9900;
+  text-decoration: none;
+  font-weight: 700;
+  transition: color 0.3s ease;
+}
+
+a:hover,
+a:focus {
+  color: #cc7a00;
+  outline: none;
+}
+
+/* Disabled button style */
+button:disabled {
+  background-color: #ffc780;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+/* Small helper text */
+small {
+  display: block;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #999999aa;
+  margin-top: 1rem;
+}
+
+label {
+  font-weight: 700;
+  margin-bottom: 0.3rem;
+  display: block;
+  color: #cc7a00;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+div[ref] {
+  opacity: 1;
+  transition: opacity 0.5s ease;
 }

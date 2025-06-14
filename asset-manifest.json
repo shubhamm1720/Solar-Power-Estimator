@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/Solar-Power-Estimator/static/css/main.22de4dd9.css",
+    "main.js": "/Solar-Power-Estimator/static/js/main.15de6769.js",
+    "index.html": "/Solar-Power-Estimator/index.html",
+    "main.22de4dd9.css.map": "/Solar-Power-Estimator/static/css/main.22de4dd9.css.map",
+    "main.15de6769.js.map": "/Solar-Power-Estimator/static/js/main.15de6769.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.22de4dd9.css",
+    "static/js/main.15de6769.js"
+  ]
+}
